@@ -1,0 +1,266 @@
+/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 25.01.2010
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <div><ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <div><ul><li><a href="#"><span>level 3</span></a></li></ul></div>
+ *                  </li>
+ *              </ul></div>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+
+
+ body {
+ font: 12px/1.5em Helvetica,Arial,sans-serif;
+ 	color: #000000;
+ }
+ 
+ hr {
+	color:blue;
+	border:none;
+	border-top: 1px solid #999;
+	margin-bottom: 10px;
+ }
+ 
+  /* menu::base */
+#menu {
+    position:relative;
+    z-index:100;
+    height:43px;
+}
+#menu .menu {
+    position:absolute;
+    padding-left: 16%;
+    background: url(images/header.gif) right top no-repeat; 
+}
+#menu * {
+    list-style:none;
+    border:0;
+    padding:0;
+    margin:0;
+}
+#menu a {
+    display:block;
+    padding:15px 14px 14px 14px;
+    white-space:nowrap;
+}
+#menu li {
+    float:left;
+    background:#33CCFF;
+}
+#menu li li {
+    float:none;
+}
+#menu div {
+    visibility:hidden;
+    position:absolute;
+    background:#33FFFF;
+}
+#menu div div {
+    margin:-35px 0 0 -1px;
+    left:100%;
+}
+#menu div div div {
+    margin:-35px 0 0 -1px;
+    left:100%;
+}
+#menu li:hover>div { visibility:visible; }
+
+/* menu::special styles */
+/* menu::level 1 */
+#menu a {
+    text-decoration:none;
+    color:#3C4955;/*1*/
+    position:relative;
+    z-index:77;
+}
+#menu a:hover {
+    background:url(images/header.gif) left -43px repeat-x;
+    color:#FFF;
+}
+#menu a:hover span { color:#FFF; }
+#menu li.current a {
+    background: #3399CC repeat-x;
+    color:#fff;
+}
+#menu li.current span {
+    color:#fff;
+}
+#menu>ul>li:hover>a {
+    background:#3399CC left -43px repeat-x;
+    color:#CACFD3;
+}
+#menu>ul>li:hover>a span { color:#FFF; }
+#menu span {
+    text-transform:uppercase;
+    font:13px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+    letter-spacing:0.3em;
+    text-decoration:none;
+    color:#333;
+}
+#menu li { background: url(images/header.gif) left top no-repeat;}
+/* menu::level >= 2 */
+#menu ul ul {width: 150px;}
+#menu li li{
+	  background:#3399CC;
+	  border-bottom:1px solid #BABDBE;}
+#menu li li a {
+    position:static;
+    background:#3399CC;
+    white-space:normal;
+    text-align: center;
+    color:#FFF;
+    padding:0;
+		text-transform:none;
+		width: 100%;
+}
+#menu li.current li a {
+    background: none;
+    color:#000;
+}
+#menu li.current li span {
+    color:#000;
+}
+#menu li li a:hover { background:#33CCFF; }
+#menu li li a span { color:#000; line-height: 15px; padding: 10px;	}
+#menu li li a:hover span { color:#333; }
+#menu li li a.parent span{background:#33934C no-repeat scroll right 50%; z-index:10;  }
+
+#menu li li span {
+    display:block;
+    text-transform:none;
+    padding:0px 25px 0px 0px;
+    font-size:12px;
+    letter-spacing: 0;
+}
+
+
+.header {
+	width:100%;
+	height: 120px;
+	background: white;
+	color: #222;
+	border: 0px solid transparent;
+	border-radius: 8px 8px 0px 0px;
+	-moz-border-radius: 8px 8px 0px 0px;
+	-webkit-border-radius: 8px 8px 0px 0px;
+}
+.logo {
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.sponsors {
+	float: right;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+.header-image{
+	margin:10px;
+}
+
+.main {
+	width: 70%;
+	margin:1px;
+}
+
+.main2 {
+	width: 70%;
+	margin:1px;
+	margin-right: 20px;
+}
+
+.book
+{
+	width: 100%;
+	margin:1px;
+	font-size: 21px;
+	font-weight: bold;
+	color: #fff;
+	
+}
+.left {
+	margin-left: 0%;
+	
+	
+}
+.right{
+	margin-right: 0%;	
+}
+.content {
+	margin-left: 40%;
+	margin-right: 25%;	
+	width: 90%;
+	background: #EBEDEE;
+	padding: 50px 64px 40px;
+	text-shadow: 1px 1px 0 #FFFFFF;
+}
+
+.content p {
+	margin-bottom: 18px;
+	text-align: justify;
+}
+
+.content ul, ol {
+	margin-left: 25px;
+	margin-bottom: 18px;
+}
+
+.content h2 {
+	font-size: 21px;
+	font-weight: bold;
+	margin-bottom: 18px;
+}
+
+.content td {
+padding:10px;
+}
+
+.content a:link, .content a:visited, .content a:active {
+    color: #236CA1;
+}
+
+.sidebar {
+	width: 240px;
+	background: #FFF;
+	height:100%;	
+}
+
+.sidebar-item {
+	padding:10px;
+}
+
+.sidebar-item h2 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.footer {
+	width: 940px;
+	margin: 10px;
+	color: #888;
+}
+.footer a:link, .footer a:visited, .footer a:active {
+	color: #eee;
+}
+
+form input[type="text"], input.form-text {
+    border: 1px solid #CCCCCC;
+    border-radius: 20px 20px 20px 20px;
+    color: #555555;
+    font-weight: bold;
+    line-height: 1em;
+    padding: 6px 15px;
+}x
